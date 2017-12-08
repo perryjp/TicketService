@@ -1,0 +1,10 @@
+To run the tests, use "mvn test" with maven and Java8 installed.
+
+The assignment was done with the following assumptions:
+- No main app is expected, only tests which will exercise the implementation of the TicketService interface.
+- If the requested number of seats is not available together in the same row, findAndHoldSeats will return null.
+- If the requested seatHoldId/customerEmail combination passed to reserveSeats() is not found or it has expired, the strings defined in the TicketService interface will be returned.
+- Seats are represented in SeatHold as a set of Integers with the formula 100 * row + seat.
+- Seats held but not reserved when frontAndCenterAllocationRandomized finishes will show as unreserved (0)
+
+Two different SeatAllocators have been written, an in-order seat allocator (mostly for testing purposes) and a front-and-center allocator which tries to provide seats in the front and center, preferring center slightly over being in the front.
